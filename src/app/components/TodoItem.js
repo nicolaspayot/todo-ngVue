@@ -1,6 +1,11 @@
 class TodoItemController {
+  constructor($scope) {
+    this.$scope = $scope;
+  }
+
   $onInit() {
     this.editing = false;
+    this.handleSave = this.handleSave.bind(this);
   }
 
   handleDoubleClick() {
@@ -8,13 +13,15 @@ class TodoItemController {
   }
 
   handleSave(text) {
-    this.onSave({
-      todo: {
-        text,
-        id: this.todo.id
-      }
+    this.$scope.$apply(() => {
+      this.onSave({
+        todo: {
+          text,
+          id: this.todo.id
+        }
+      });
+      this.editing = false;
     });
-    this.editing = false;
   }
 
   handleDestroy(id) {

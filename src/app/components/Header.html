@@ -1,8 +1,9 @@
 <header class="header">
   <h1>todos</h1>
-  <todo-text-input
-    new-todo="true"
-    on-save="$ctrl.handleSave(text)"
-    placeholder="What needs to be done?">
-  </todo-text-input>
+  <vue-component
+    name="TodoTextInput"
+    vprops-new-todo="true"
+    vprops-placeholder="'What needs to be done?'"
+    vprops-on-save="$ctrl.handleSave">
+  </vue-component>
 </header>

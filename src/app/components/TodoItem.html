@@ -1,10 +1,11 @@
 <li ng-class="{'editing': $ctrl.editing, 'completed': $ctrl.todo.completed}">
-  <todo-text-input
+  <vue-component
+    name="TodoTextInput"
     ng-if="$ctrl.editing"
-    text="$ctrl.todo.text"
-    editing="$ctrl.editing"
-    on-save="$ctrl.handleSave(text)">
-  </todo-text-input>
+    vprops-text="$ctrl.todo.text"
+    vprops-editing="$ctrl.editing"
+    vprops-on-save="$ctrl.handleSave">
+  </vue-component>
   <div class="view" ng-if="!$ctrl.editing">
     <input
       class="toggle"
