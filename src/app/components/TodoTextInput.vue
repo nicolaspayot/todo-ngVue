@@ -14,19 +14,19 @@ export default {
   props: {
     placeholder: String,
     newTodo: Boolean,
-    editing: {type: Boolean, default: false },
-    text: { type: String, default: '' },
+    editing: {type: Boolean, default: false},
+    text: {type: String, default: ''},
     onSave: Function
   },
   mounted() {
     if (this.$refs.input) {
-      this.$refs.input.focus()
+      this.$refs.input.focus();
     }
   },
   data() {
     return {
       value: this.text
-    }
+    };
   },
   methods: {
     handleBlur() {
@@ -37,9 +37,9 @@ export default {
     handleSubmit() {
       this.onSave(this.value);
       if (this.newTodo) {
-          this.value = '';
+        this.value = '';
       }
     }
   }
-}
+};
 </script>
