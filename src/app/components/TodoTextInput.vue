@@ -31,14 +31,20 @@ export default {
   methods: {
     handleBlur() {
       if (!this.newTodo) {
-        this.onSave(this.value);
+        this.save();
       }
     },
     handleSubmit() {
-      this.onSave(this.value);
+      this.save();
       if (this.newTodo) {
         this.value = '';
       }
+    },
+    save() {
+      if (this.onSave) {
+        this.onSave(this.value);
+      }
+      this.$emit('save', this.value);
     }
   }
 };

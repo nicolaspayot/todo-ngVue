@@ -1,4 +1,8 @@
-<header-component todos="$ctrl.todos"></header-component>
+<vue-component
+  name="Header"
+  vprops-todos="$ctrl.todos"
+  vprops-on-save="$ctrl.onSave">
+</vue-component>
 <main-section
   todos="$ctrl.todos"
   filter="$ctrl.filter"
