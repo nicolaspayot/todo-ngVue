@@ -1,4 +1,5 @@
 class TodoItemController {
+  /** @ngInject */
   constructor($scope) {
     this.$scope = $scope;
   }
