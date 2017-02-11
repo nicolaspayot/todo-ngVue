@@ -1,4 +1,5 @@
 import angular from 'angular';
+import Vue from 'vue';
 import 'ngVue';
 import 'todomvc-app-css/index.css';
 
@@ -16,7 +17,9 @@ angular
   .module('app', ['ngVue'])
   .service('todoService', TodoService)
   .component('app', App)
-  .value('Header', Header)
+  .directive('vheader', /** @ngInject */ function (createVueComponent) { // eslint-disable-line
+    return createVueComponent(Vue.component('Header', Header));
+  })
   .component('footerComponent', Footer)
   .component('mainSection', MainSection)
   .value('TodoTextInput', TodoTextInput)
