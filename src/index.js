@@ -1,4 +1,5 @@
 import angular from 'angular';
+import Vue from 'vue';
 import 'ngVue';
 import 'todomvc-app-css/index.css';
 
@@ -19,5 +20,5 @@ angular
   .component('headerComponent', Header)
   .component('footerComponent', Footer)
   .component('mainSection', MainSection)
-  .value('TodoTextInput', TodoTextInput)
+  .value('TodoTextInput', Vue.component('TodoTextInput', TodoTextInput))
   .component('todoItem', TodoItem);
