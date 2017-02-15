@@ -22,5 +22,5 @@ angular
   })
   .component('footerComponent', Footer)
   .component('mainSection', MainSection)
-  .value('TodoTextInput', TodoTextInput)
+  .value('TodoTextInput', Vue.component('TodoTextInput', TodoTextInput))
   .component('todoItem', TodoItem);
